@@ -1,0 +1,8 @@
+# requirements.txt
+# -----------------------------------------
+# 'os' and 'argparse' are part of Python stdlib
+# 'tkinter' requires system-level 'tk' package:
+#   Arch Linux: sudo pacman -S tk
+#   Ubuntu/Debian: sudo apt install python3-tk
+# -----------------------------------------
+pyinstaller
