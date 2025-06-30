@@ -8,7 +8,7 @@ def copy_from_line(file_path,line):
         lines = f.readlines()
     text = lines[line -1]
     copy_to_chip(text)
-    print("Done the work")
+    print("[+] Copied to Chipboard [+]")
 
 # ----------- Copy to Chipboard ---------------
 def copy_to_chip(text):
@@ -21,9 +21,8 @@ def copy_to_chip(text):
 
 # ---------- Main module ----------
 if __name__ == "__main__":
-    import sys
-
-    parser = argparse.ArgumentParser(description='Copy the file to Cilpboard.')
+    
+    parser = argparse.ArgumentParser(description='Copy the text from file to Cilpboard.')
     parser.add_argument('--file',required=True)
     parser.add_argument('--line', type=int)
     parser.add_argument('--start', type=int)
