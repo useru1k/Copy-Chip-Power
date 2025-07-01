@@ -10,6 +10,15 @@ def copy_from_line(file_path,line):
     copy_to_chip(text)
     print("[+] Copied to Chipboard [+]")
 
+def copy_from_range(file_path,start,end):
+    with open(file_path,'r') as f:
+        lines = f.readlines()
+    text = ""
+    for i in range(start,end+1):
+        text += lines[i-1]
+    copy_to_chip(text)
+    print("[+] Copied to Chipboard [+]")
+
 # ----------- Copy to Chipboard ---------------
 def copy_to_chip(text):
     root = tk.Tk()
@@ -33,7 +42,7 @@ if __name__ == "__main__":
     if args.line:
         copy_from_line(args.file,args.line)
     if args.start and args.end:
-        copy_from_start_end(args.file,args.start,args.end)
+        copy_from_range(args.file,args.start,args.end)
 
     #print("Hola form ChipPower")
 
