@@ -19,6 +19,13 @@ def copy_from_range(file_path,start,end):
     copy_to_chip(text)
     print("[+] Copied to Chipboard [+]")
 
+def copy_full(file_path):
+    with open(file_path,'r') as f:
+        lines = f.readlines()
+    text = ''.join(lines)
+    copy_to_chip(text)
+    print("[+] Copied to Chipboard [+]")
+
 # ----------- Copy to Chipboard ---------------
 def copy_to_chip(text):
     root = tk.Tk()
@@ -36,6 +43,7 @@ if __name__ == "__main__":
     parser.add_argument('--line', type=int)
     parser.add_argument('--start', type=int)
     parser.add_argument('--end', type=int)
+    parser.add_argument('--full', action='store_true', help='Do full copy')
 
     args = parser.parse_args();
 
@@ -43,7 +51,8 @@ if __name__ == "__main__":
         copy_from_line(args.file,args.line)
     if args.start and args.end:
         copy_from_range(args.file,args.start,args.end)
-
+    if args.full:
+        copy_full(args.file)
     #print("Hola form ChipPower")
 
     #if len(sys.argv) < 4:
