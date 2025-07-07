@@ -10,6 +10,7 @@ def copy_from_line(file_path,line):
     copy_to_chip(text)
     print("[+] Copied to Chipboard [+]")
 
+# ----------- Copy the text from One range to Another ------------
 def copy_from_range(file_path,start,end):
     with open(file_path,'r') as f:
         lines = f.readlines()
@@ -19,6 +20,7 @@ def copy_from_range(file_path,start,end):
     copy_to_chip(text)
     print("[+] Copied to Chipboard [+]")
 
+# ----------- Copy the Full Text of the file -----------
 def copy_full(file_path):
     with open(file_path,'r') as f:
         lines = f.readlines()
@@ -40,9 +42,9 @@ if __name__ == "__main__":
     
     parser = argparse.ArgumentParser(description='Copy the text from file to Cilpboard.')
     parser.add_argument('--file',required=True)
-    parser.add_argument('--line', type=int)
-    parser.add_argument('--start', type=int)
-    parser.add_argument('--end', type=int)
+    parser.add_argument('--line', type=int, help='Copy the one line from the file')
+    parser.add_argument('--start', type=int, help='Start line number in range')
+    parser.add_argument('--end', type=int, help='End line number in range')
     parser.add_argument('--full', action='store_true', help='Do full copy')
 
     args = parser.parse_args();
