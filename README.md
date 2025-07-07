@@ -2,14 +2,14 @@
 
 📝 A simple cross-platform CLI tool to copy specific lines or ranges from a file directly to the system clipboard using Python — no external libraries or commands required.
 
-### ✨ Features
+## ✨ Features
   - Copy a specific line from a file
   - Copy a range of lines
   - Copy the entire file content
   - Cross-platform (Windows, macOS, Linux)
   - Uses only standard Python libraries
 
-### Installation
+## 📂 Installation
 No installation required! Just clone the repository and run the script using Python 3.
 ```
 git clone https://github.com/your-username/copyPower.git
@@ -24,7 +24,7 @@ On top of that, using Ctrl + C to copy often kills the running process instead o
 
 So, I built copyPower — a simple CLI tool to help me copy exact lines, ranges, or entire file content directly to the clipboard without leaving the terminal or relying on the mouse. It's fast, minimal, and makes terminal work more efficient.
 
-### Usage 
+## 🛠 Usage 
 ```
 usage: copychip.py [-h] --file FILE [--line LINE] [--start START] [--end END]
                    [--full]
